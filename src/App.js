@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from 'react';
+import Sidebar from './components/Sidebar';
+import Receita from './components/Receita';
+import './index.css';  // Importando o CSS global
+import Header from './components/Header';
+import './components/Header.css';  // Importando o CSS do Header
 
-function App() {
+const App = () => {
+  const [enfermidadeSelecionada, setEnfermidadeSelecionada] = useState(null);
+
+  const receitas = {
+    "Ansiedade": {
+      descricao: "Viver com ansiedade é viver com uma ...",
+      prescricao: "Retrato de uma Senhora de Henry James - 10 a 20 páginas por dia",
+    },
+    "Depressão": {
+      descricao: "Para momentos de tristeza profunda...",
+      prescricao: "As Pequenas Virtudes de Natalia Ginzburg - 5 a 10 páginas ao dia",
+    },
+    // Adicione outras enfermidades e receitas aqui
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header />  {/* Cabeçalho */}
+      <div className="main-content">  {/* Flex container para Sidebar e Receita */}
+        <Sidebar 
+          enfermidades={Object.keys(receitas)} 
+          selecionarEnfermidade={setEnfermidadeSelecionada} 
+        />
+        <div className="receita-container">
+          <Receita 
+            enfermidade={enfermidadeSelecionada} 
+            receita={receitas[enfermidadeSelecionada]} 
+          />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

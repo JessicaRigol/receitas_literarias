@@ -1,13 +1,147 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* src/index.css */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4ec;
+  }
+  
+  .main-content {
+    display: flex;
+    flex-grow: 1;
+    /*margin-top: 1px; /* Remover o espaço acima da sidebar */
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column; /* Coloca os elementos na coluna */
+    min-height: 100vh; /* Garante que a página ocupe 100% da altura */
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #816f55;
+    padding: 20px;
+    height: calc(100vh - 60px); /* Define a altura da sidebar ocupando a tela menos a altura do cabeçalho */
+    position: sticky; /* Muda para 'relative' para evitar sobreposição com o cabeçalho */
+    top: 60px; /* Compensa a altura do cabeçalho para começar abaixo dele */
+    z-index: 1;
+  }
+  
+  .sidebar-title {
+    color: #8B4513; /* Cor marrom */
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar h2 {
+    font-size: 1.4em;
+    margin-bottom: 1em;
+    text-align: center;
+    color: #e1cbb1;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    cursor: pointer;
+    padding: 10px 0;
+    color: #e1cbb1;
+    border-bottom: 1px solid #7b5836;
+  }
+  
+  .sidebar li:hover {
+    background-color: #7b5836;
+  }
+  
+  .receita {
+    background-color: #f4e4bc; /* Cor de fundo que simula uma folha antiga */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Georgia', serif; /* Fonte serifada para um estilo clássico */
+    color: #5b4e3c; /* Cor do texto para combinar com o fundo */
+    border: 1px solid #c3a36e; /* Borda sutil para dar o contorno */
+    background-image: radial-gradient(circle, #fdf2e3, #f4e4bc); /* Textura de papel */
+  }
+  
+  .receita-container {
+    margin: 0 auto;  /* Centraliza o quadro */
+    margin-left: 270px;
+    padding: 20px;
+    flex-grow: 1;  /* Ocupa o restante do espaço */
+    max-width: 900px;  /* Limita a largura do contêiner para uma medida ideal */
 }
+  
+  .receita h2 {
+    font-size: 1.8em;
+    color: #3e2f1f;
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #c3a36e; /* Linha horizontal abaixo do título */
+    padding-bottom: 10px;
+  }
+  
+  .receita h3 {
+    font-size: 1.3em;
+    color: #4a392a;
+    margin-top: 20px;
+  }
+  
+  .receita p {
+    line-height: 1.6;
+  }
+  
+  .receita textarea, .receita button {
+    font-family: 'Georgia', serif;
+  }
+  
+  .receita button {
+    background-color: #a07d52;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .receita button:hover {
+    background-color: #8c6945;
+  }
+  
+/* CSS para a área de comentários */
+.receita textarea {
+    width: 96%; /* Ajuste a largura conforme desejado */
+    height: 100px; /* Reduza a altura conforme desejado */
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #e1cbb1;
+    resize: none;
+    font-size: 1em;
+    background-image: radial-gradient(circle, rgba(253, 242, 227, 0.6), rgba(244, 228, 188, 0.4)); /* Fundo de papel mais claro */
+    color: #5b4e3c; /* Cor do texto */
+}
+  
+  .receita button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #5b4e3c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .receita button:hover {
+    background-color: #7b5836;
+  }
+  
